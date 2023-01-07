@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-!n+i)75_$^i@t3&vy5o8$&s-j&n--=21*^z8#^4fmj%!ukt(+o
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'False'
 
-ALLOWED_HOSTS = ["127.0.0.1","0.0.0.0:5806","127.0.0.1:8000","https://web-production-7767.up.railway.app"]
+ALLOWED_HOSTS = ["127.0.0.1","0.0.0.0:5806","127.0.0.1:8000","https://web-production-7767.up.railway.app","web-production-7767.up.railway.app"]
 
 
 # Application definition
@@ -76,7 +76,7 @@ TEMPLATES = [
         },
     },
 ]
-CSRF_TRUSTED_ORIGINS=['https://tripulishop.up.railway.app']
+CSRF_TRUSTED_ORIGINS=['https://web-production-7767.up.railway.app']
 WSGI_APPLICATION = 'tripulishop.wsgi.application'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 CORS_ORIGIN_ALLOW_ALL=True
