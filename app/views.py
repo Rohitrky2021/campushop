@@ -280,3 +280,6 @@ def payment_done(request):
         OrderPlaced(user=user,customer=customer,product=c.product,quantity=c.quantity).save()
         c.delete()
     return redirect("orders")    
+
+def error404(request,exception):
+    return render(request, 'app/error.html')    
