@@ -26,9 +26,9 @@ SECRET_KEY = 'django-insecure-!n+i)75_$^i@t3&vy5o8$&s-j&n--=21*^z8#^4fmj%!ukt(+o
 # SECRET_KEY = os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = 'False'
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["127.0.0.1","0.0.0.0:5806","127.0.0.1:8000"]
 
 
 # Application definition
@@ -69,6 +69,7 @@ TEMPLATES = [
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
+                # 'django.core.context_processors.static',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
@@ -77,7 +78,7 @@ TEMPLATES = [
 ]
 CSRF_TRUSTED_ORIGINS=['https://tripulishop.up.railway.app']
 WSGI_APPLICATION = 'tripulishop.wsgi.application'
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 CORS_ORIGIN_ALLOW_ALL=True
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
@@ -140,6 +141,7 @@ LOGIN_REDIRECT_URL ='/profile/'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 # SESSION_ENGINE="django.contrib.session.backends.db"
 STATIC_ROOT=os.path.join(BASE_DIR,"/static/")
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, "static"),
-)
+# STATICFILES_DIRS = (
+#     os.path.join(BASE_DIR, "static"),
+# )
+
