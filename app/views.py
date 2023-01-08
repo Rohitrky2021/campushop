@@ -160,7 +160,9 @@ def orders(request):
 def change_password(request):
  return render(request, 'app/changepassword.html')
 
+
 def mobile(request,data=None):
+    global mobiles
     if data==None:
         mobiles=Product.objects.filter(category='M')
     elif data=='Redmi' or data=='Samsung':
@@ -282,4 +284,7 @@ def payment_done(request):
     return redirect("orders")    
 
 def error404(request,exception):
-    return render(request, 'app/error.html')    
+    return render(request, 'app/error.html')
+
+def error500(request):
+    return render(request, 'app/error.html')        

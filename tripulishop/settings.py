@@ -26,11 +26,11 @@ SECRET_KEY = 'django-insecure-!n+i)75_$^i@t3&vy5o8$&s-j&n--=21*^z8#^4fmj%!ukt(+o
 # SECRET_KEY = os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'False'
+DEBUG =False
 
-ALLOWED_HOSTS = ["https://web-production-7767.up.railway.app","web-production-7767.up.railway.app","https://web-production-7767.up.railway.app/"]
+ALLOWED_HOSTS = ["https://web-production-7767.up.railway.app","web-production-7767.up.railway.app","https://web-production-7767.up.railway.app/",'*']
 
-
+DEBUG_PROPAGATE_EXCEPTIONS = True
 # Application definition
 
 INSTALLED_APPS = [
@@ -78,10 +78,10 @@ TEMPLATES = [
 ]
 CSRF_TRUSTED_ORIGINS=['https://web-production-7767.up.railway.app']
 WSGI_APPLICATION = 'tripulishop.wsgi.application'
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 CORS_ORIGIN_ALLOW_ALL=True
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
+COMPRESS_ENABLED = os.environ.get('COMPRESS_ENABLED', False)
 
 DATABASES = {
     'default': {
@@ -144,4 +144,5 @@ STATIC_ROOT=os.path.join(BASE_DIR,"/static/")
 # STATICFILES_DIRS = (
 #     os.path.join(BASE_DIR, "static"),
 # )
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
